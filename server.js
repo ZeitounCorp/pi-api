@@ -1,8 +1,11 @@
 const fs = require('fs');
 const request = require('request');
 const express = require('express');
-const app = express()
-const port = 3000
+const app = express();
+// Listen on a specific host via the HOST environment variable
+var host = process.env.HOST || '0.0.0.0';
+// Listen on a specific port via the PORT environment variable
+var port = process.env.PORT || 8080;
 
 let piesDigits = '';
 
@@ -84,5 +87,5 @@ app.get('/limited/:limit', (req, res) => {
 
 
 
-app.listen(port, () => console.log(`Listening on port ${port}!`))
+app.listen(port, host, () => console.log(`Listening on port ${port}!`))
 
