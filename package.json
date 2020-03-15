@@ -1,0 +1,23 @@
+{
+  "name": "pi-api",
+  "version": "0.0.1",
+  "description": "Get Index of a given number in PI",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZeitounCorp/pi-api.git"
+  },
+  "author": "lenny zeitoun (@ZeitounCorp)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZeitounCorp/pi-api/issues"
+  },
+  "homepage": "https://github.com/ZeitounCorp/pi-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2"
+  }
+}
