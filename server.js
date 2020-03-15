@@ -12,6 +12,28 @@ request.get('https://angio.net/pi/digits/pi1000000.txt', function (error, respon
   }
 });
 
+app.get('/', (req, res) => {
+  res.send({
+    routes: [
+      {
+        name: '/all',
+        params: false
+      },
+      {
+        name: '/pi/:d',
+        params: true,
+        paramType: 'Number'
+      },
+      {
+        name: '/limited/:l',
+        params: true,
+        paramType: 'Number'
+      }
+    ],
+    timestamp: Date.now()
+  })
+})
+
 app.get('/all', (req, res) => {
   res.send({
     pies: piesDigits,
@@ -52,11 +74,11 @@ app.get('/limited/:limit', (req, res) => {
     })
   } else {
     let subPI = piesDigits.substring(0, Number(limit) + 2);
-      res.send({
-        pi: subPI,
-        limit: limit,
-        timestamp: Date.now()
-      })
+    res.send({
+      pi: subPI,
+      limit: limit,
+      timestamp: Date.now()
+    })
   }
 })
 
